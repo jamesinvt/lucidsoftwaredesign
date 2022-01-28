@@ -24,8 +24,3 @@ interface Article {
     author: string;
     iso8601date: string;
   }
-
-export type PostProps = {
-    source: MDXRemoteSerializeResult<Record<string, unknown>>;
-    frontMatter: Record<string, string>;
-};

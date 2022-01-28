@@ -1,20 +1,33 @@
-import { FC } from 'react';
-import { getLayout } from '../../layouts/MainLayout'
-import Head from 'next/head';
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { GetStaticProps } from "next";
+import { getResume } from "../../lib";
+import Head from "next/head";
+import { getLayout } from "../../layouts/MainLayout";
 
-const About = (): JSX.Element => {
+interface Props {
+  resumeMdx: MDXRemoteSerializeResult;
+}
+
+const About = ({ resumeMdx }: Props) => {
   return (
     <>
       <Head>
-        <title>About Me</title>
+        <title>Resume</title>
       </Head>
-      <main>
-          Hey this is the About Me page
-      </main>
+      <h1>About James Cameron</h1>
+      <MDXRemote {...resumeMdx} />
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const resume = getResume();
+  const resumeMdx = await serialize(resume);
+
+  return { props: { resumeMdx } };
 };
 
-About.getLayout = getLayout
+About.getLayout = getLayout;
 
 export default About;

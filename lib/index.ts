@@ -36,6 +36,10 @@ export const getFile = (dir: string) => {
     }));
   };
 
+  export const getResume = (): string => {
+    return getFile("_markdown/resume")("index.mdx");
+  };
+
   export const parseImages = (articleContent: string): string => {
     return articleContent.replace(
       /!\[([^\[]+)\]\(([^\)]+)\)/g,

@@ -21,11 +21,17 @@ const Blog = ({ posts }: {posts: Article[]}) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const posts: Article[] = await getPosts();
-  
-    return {
-      props: { posts },
-    };
+    try {
+        const posts: Article[] = await getPosts();
+        return {
+            props: { posts },
+        };
+    } catch(e: unknown) {
+        console.log(`Error in /blog: ${e}`);
+        return {
+            notFound: true
+        };
+    }
   };
 
 Blog.getLayout = getLayout;

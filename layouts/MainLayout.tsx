@@ -13,12 +13,6 @@ type Props = {
 const MainLayout: FC = ({ children }) => {
   return (
     <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
-          rel="stylesheet"
-        />
-      </Head>
       <Navbar />
       <main>{children}</main>
     </>
