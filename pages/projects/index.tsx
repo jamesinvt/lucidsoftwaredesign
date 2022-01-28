@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { getLayout } from '../../layouts/MainLayout'
 import Head from 'next/head';
 
-const Projects: FC = ({ posts }): JSX.Element => {
+const Projects = (): JSX.Element => {
   return (
     <>
       <Head>

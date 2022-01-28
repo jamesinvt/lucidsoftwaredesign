@@ -1,15 +1,13 @@
-import { FC } from "react";
-import { MDXProvider } from "@mdx-js/react";
-import { GetStaticPaths, GetStaticProps } from "next";
-import fs from "fs";
-import path from "path";
-type PostProps = {
-  mdx: string;
+import { Article } from "../../types/posts";
+import { MDXRemote } from "next-mdx-remote";
+
+const SinglePost = ({ article }: { article: Article }) => {
+  return (
+    <div>
+      <MDXRemote components={{}} {...article.mdx} />
+    </div>
+  );
 };
 
-const Post: FC<PostProps> = (props) => {
-  return <div>hey</div>;
-};
 
-
-export default Post;
+export default SinglePost;

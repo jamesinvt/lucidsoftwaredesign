@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { getLayout } from '../layouts/MainLayout';
 
- const Custom500: FC = () => {
+ const Custom500 = () => {
     return <h1>Error 500 - Oh, you dun goofed...</h1>
   }
 
