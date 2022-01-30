@@ -15,9 +15,12 @@ const Post = ({ post }: { post: Article}) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log('test')
   const post: Article = getPost(params?.id as string);
+  console.log('article')
   post.content = parseImages(post.content);
   post.mdx = await serialize(post.content);
+  console.log(post.mdx)
   return {
     props: { post },
   };
@@ -25,14 +28,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  try {
+  console.log('test')
     return {
       paths: await getPostsPaths(),
       fallback: false,
     };
-  } catch(e) {
-    console.log(`Error in /blog/[id]: ${e}`);
-  }
 };
 
 Post.getLayout = getLayout;
