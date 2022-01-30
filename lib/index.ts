@@ -21,11 +21,11 @@ export const getFile = (dir: string) => {
   };
   
   export const getPosts = (): Article[] => {
-    return getArticles("_posts");
+    return getArticles("_markdown/blog");
   };
 
   export const getPost = (id: string): Article => {
-    return getArticle(getFile("_posts")(id + ".mdx"));
+    return getArticle(getFile("_markdown/blog")(id + ".mdx"));
   };
 
   export const getPostsPaths = (): ArticlePath[] => {
