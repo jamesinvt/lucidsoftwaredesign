@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { cssVars } from '../../theme/ThemeProvider';
 
 const NavbarLink = styled.a`
   color: red;
@@ -18,7 +19,7 @@ const NavbarLink = styled.a`
 
 const NavbarContainer = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   height: 80px;
   top: 0;
@@ -31,7 +32,7 @@ const NavListContainer = styled.ul`
   display: flex;
   align-items: center;
   text-align: center;
-  width:100%;
+  width: 100%;
 `;
 
 export const NavListItem = styled.li`
