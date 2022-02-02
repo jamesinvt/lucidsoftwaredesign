@@ -28,9 +28,7 @@ const MainLayout: FC = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Container>
         <Content>{children}</Content>
-      </Container>
     </>
   );
 };
