@@ -54,7 +54,7 @@ export const cssRule = {
 export const DarkTheme = {
   colors: {
     background: "#050416",
-    primary: "#00bcd4",
+    primary: "#F9CAA8",
     // primaryAlt: "#00acc1",
     secondary: "#ffc107",
     // secondaryAlt: "#ffb300",

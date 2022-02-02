@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import { getLayout } from '../layouts/MainLayout'
 import styled from 'styled-components'
 import heroImage from '../public/m_ccexpress.png';
+import { cssVars } from '../theme/ThemeProvider'
 
 const Hero = styled.section`
   min-height:100vh;
@@ -13,6 +14,35 @@ const Hero = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   width:100%;
+  margin:0;
+`;
+
+const Container = styled.div`
+  background-color: ${cssVars.color.secondary};
+  color: ${cssVars.color.onPrimary};
+  height: 100vh;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const AltContainer = styled(Container)`
+  background-color: ${cssVars.color.primary};
+`;
+const Content = styled.div`
+  width: ${cssVars.spacing.container};
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+`;
+
+const Card = styled.div`
+  width: 100%;
+  text-align: center;
 `;
 const Home = () => {
   return (
@@ -30,9 +60,61 @@ const Home = () => {
           height={700}/>
         </div>
       </Hero>
-      <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
+      <Container>
+        <Content>
+            <p>My name is James Cameron. I am a fullstack engineer with a passion for learning.</p>
+            <Card>
+              <h1>Vermont Tech</h1>
+              <p>Bachelors in Software Engineering</p>
+            </Card>
+            <Card>
+              <h1>Systems and Software</h1>
+              <p>Software Engineer</p>
+              <p>Javascript/Java/COBOL</p>
+            </Card>
+            <Card>
+              <h1>Dealer.com</h1>
+              <p>Support Developer/Support Operations Developer</p>
+              <p>Javascript/NodeJS</p>
+            </Card>
+        </Content>
+      </Container>
+      <AltContainer>
+        <Content>
+            <p>My name is James Cameron. I am a fullstack engineer with a passion for learning.</p>
+            <Card>
+              <h1>Lucid Sofware Designs</h1>
+              <p>This site</p>
+              <p>Next.js</p>
+            </Card>
+            <Card>
+              <h1>Disc App</h1>
+              <p>Desicription of app</p>
+              <p>Javascript/NodeJS</p>
+            </Card>
+            <Card>
+              <h1>Movie App</h1>
+              <p>Desicription of app</p>
+              <p>Javascript/NodeJS</p>
+            </Card>
+        </Content>
+      </AltContainer>
+      <Container>
+        <Content>
+        <h1>Contact Me</h1>
+        <form className="cf">
+          <div className="half left cf">
+            <input type="text" id="input-name" placeholder="Name" />
+            <input type="email" id="input-email" placeholder="Email address" />
+            <input type="text" id="input-subject" placeholder="Subject" />
+          </div>
+          <div className="half right cf">
+            <textarea name="message" type="text" id="input-message" placeholder="Message" />
+          </div>  
+          <input type="submit" value="Submit" id="input-submit" />
+        </form>
+        </Content>
+      </Container>
     </>
   )
 }
