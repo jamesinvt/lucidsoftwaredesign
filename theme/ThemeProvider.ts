@@ -1,4 +1,21 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { DefaultTheme } from "styled-components/native";
+
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    colors: {
+      background: string
+      primary: string
+      secondary: string
+      tertiary: string
+      error: string,
+      onPrimary: string,
+      onSecondary: string,
+      onTertiary: string,
+      onError: string,
+    }
+  }
+}
 
 export const lightTheme = {
   body: '#FFF',
@@ -51,7 +68,9 @@ export const cssRule = {
 }
 
 
-export const DarkTheme = {
+
+
+export const DarkTheme: DefaultTheme = {
   colors: {
     background: "#050416",
     primary: "#F9CAA8",
@@ -72,7 +91,7 @@ export const DarkTheme = {
   }
 }
 
-export const LightTheme = {
+export const LightTheme: DefaultTheme = {
   colors: {
     background: "#fafafa",
     primary: "#00b0c0",
@@ -81,14 +100,14 @@ export const LightTheme = {
     // secondaryAlt: "#660159",
     tertiary: "#ee4917",
     // tertiaryAlt: "#d33d0f",
-    surface: "#f3f5ec",
+    // surface: "#f3f5ec",
     error: "#f44034",
     onPrimary: "#fff",
     onSecondary: "#050416",
     onTertiary: "#050416",
     // onBackground: "#050416",
     // onSurface: "#050416",
-    // onError: "#050416",
+    onError: "#050416",
     // dimmer: "#3a3a3abc",
   }
 }
@@ -159,20 +178,3 @@ export const cssVars = {
     container: 'min(80%,80rem)'
   },
 }
-
-const GlobalStyle = createGlobalStyle`
-    * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-    }
-    body {
-        background: ${({ theme }) => theme.body};
-        color: ${({ theme }) => theme.text};
-        font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
-        transition: all 0.50s linear;
-        background: #fff;
-    }
-`;
-
-export default GlobalStyle;

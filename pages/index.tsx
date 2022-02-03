@@ -109,7 +109,7 @@ const Home = () => {
             <input type="text" id="input-subject" placeholder="Subject" />
           </div>
           <div className="half right cf">
-            <textarea name="message" type="text" id="input-message" placeholder="Message" />
+            <textarea name="message" id="input-message" placeholder="Message" />
           </div>  
           <input type="submit" value="Submit" id="input-submit" />
         </form>
