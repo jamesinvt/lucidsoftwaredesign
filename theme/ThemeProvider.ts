@@ -13,6 +13,7 @@ declare module 'styled-components' {
       onSecondary: string,
       onTertiary: string,
       onError: string,
+      onBackground: string,
     }
   }
 }
@@ -84,7 +85,7 @@ export const DarkTheme: DefaultTheme = {
     onPrimary: "#ffffff",
     onSecondary: "#000000",
     onTertiary: "#000000",
-    // onBackground: "#fff",
+    onBackground: "#fff",
     // onSurface: "#fff",
     onError: "#fff",
     // dimmer: "#464646b5",
@@ -105,7 +106,7 @@ export const LightTheme: DefaultTheme = {
     onPrimary: "#fff",
     onSecondary: "#050416",
     onTertiary: "#050416",
-    // onBackground: "#050416",
+    onBackground: "#050416",
     // onSurface: "#050416",
     onError: "#050416",
     // dimmer: "#3a3a3abc",
