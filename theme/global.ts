@@ -13,9 +13,8 @@ const GlobalStyle = createGlobalStyle`
     body {
          font-family: 'Lato', sans-serif;
          font-size: 16px;
-         background: ${(props) => props.theme.colors.primary};
+         background: white;
          color: ${(props) => props.theme.colors.tertiary};
-         overflow: hidden;
     }
     a {
         text-decoration: none; 
