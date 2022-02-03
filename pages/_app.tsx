@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode, useState } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import GlobalStyle, { lightTheme, darkTheme } from "../theme/ThemeProvider";
+import GlobalStyle from "../theme/global";
 import { useTheme, ThemeProvider } from 'styled-components'
 import { DarkTheme, DarkThemeStyle, LightTheme, LightThemeStyle } from "../theme/ThemeProvider";
 // import '../styles/globals.css';
