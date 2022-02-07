@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import { getLayout } from '../layouts/MainLayout'
 import styled from 'styled-components'
 import heroImage from '../public/m_ccexpress.png';
-import { cssVars } from '../theme/ThemeProvider'
+import { cssRule, cssVars } from '../theme/ThemeProvider'
 
 const Hero = styled.section`
   min-height:100vh;
@@ -15,6 +15,16 @@ const Hero = styled.section`
   flex-wrap: wrap;
   width:100%;
   margin:0;
+`;
+
+const Grid = styled.main`
+  display: grid;
+  gap: ${cssVars.spacing.gap};
+  grid-template-areas: "cover" "dense-list" "list";
+  ${cssRule.mdUp} {
+    grid-template-areas: "cover" "list list  list";
+    grid-template-columns: 2fr 1fr;
+  }
 `;
 
 const Container = styled.div`
@@ -41,7 +51,7 @@ const Content = styled.div`
 `;
 
 const Card = styled.div`
-  width: 100%;
+  width: '100%';
   text-align: center;
 `;
 const Home = () => {
@@ -57,11 +67,13 @@ const Home = () => {
         <div className="right">
           <Image src={heroImage} 
           width={700}
-          height={700}/>
+          height={700}
+          alt='The man, the myth, the legend'/>
         </div>
       </Hero>
       <Container>
         <Content>
+          <Grid>
             <p>My name is James Cameron. I am a fullstack engineer with a passion for learning.</p>
             <Card>
               <h1>Vermont Tech</h1>
@@ -77,6 +89,7 @@ const Home = () => {
               <p>Support Developer/Support Operations Developer</p>
               <p>Javascript/NodeJS</p>
             </Card>
+            </Grid>
         </Content>
       </Container>
       <AltContainer>
